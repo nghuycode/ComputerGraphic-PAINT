@@ -11,8 +11,7 @@ public class InputHandler : MonoBehaviour
 
     [SerializeField]
     private TouchState _state = TouchState.Drop;
-    [SerializeField]
-    private Vector3 startTouchPos, currentTouchPos;
+    public Vector3 startTouchPos, currentTouchPos;
     private float diffX, diffY;
     private float startFrame;
     public GameObject GetHoveredObject()
@@ -83,6 +82,7 @@ public class InputHandler : MonoBehaviour
 
         Debug.Log("Start Position:" + startTouchPos);
         Debug.Log("Current Position:" + Input.mousePosition);
+
         //Send notification to the listener
     }
     #endregion
