@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿using UnityEngine;
+using static Enums;
 public class InputHandler : MonoBehaviour
 {
     public enum TouchState 
@@ -9,9 +7,8 @@ public class InputHandler : MonoBehaviour
         Drag, Drop, Start
     }
 
-    [SerializeField]
     private TouchState _state = TouchState.Drop;
-    public Vector3 startTouchPos, currentTouchPos;
+    Vector3 startTouchPos, currentTouchPos;
     private float diffX, diffY;
     private float startFrame;
     public static InputHandler Instance;
@@ -20,18 +17,22 @@ public class InputHandler : MonoBehaviour
     }
     private void MouseCheck()
     {
+       
+        currentTouchPos = Input.mousePosition;
+       
         if (Input.GetMouseButtonDown(0) && _state == TouchState.Drop)
         {
-            startTouchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0,0,1);
             _state = TouchState.Start;
-            Drawer.Instance.StartDrawing(MenuManager.Instance.CurrentDrawType);
+            startTouchPos = currentTouchPos;
         }
-
+        
         if (_state == TouchState.Start)
-        {
-            if (Input.mousePosition != startTouchPos)
+        {   
+            if (currentTouchPos != startTouchPos)
             {
                 _state = TouchState.Drag;
+                //Code To Create A Shape
+                Demo.instance.CreateAShape(ShapeTypes.Circle, startTouchPos, currentTouchPos);
                 Drag();
             }
         }
@@ -40,16 +41,15 @@ public class InputHandler : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             _state = TouchState.Drop;
-            Drawer.Instance.StopDrawing();
+            Demo.instance.FinishAShape();
         }
     }
 
     #region Move Command Definition
+
     void Drag()
     {
-        float disX = Mathf.Abs(Input.mousePosition.x - startTouchPos.x);
-        float disY = Mathf.Abs(Input.mousePosition.y - startTouchPos.y);
-        currentTouchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0,0,1);
+        Demo.instance.UpdateAShape(startTouchPos, currentTouchPos);
     }
     #endregion
     private void Update()
