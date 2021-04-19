@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MenuManager : MonoBehaviour
 {
-    public EnumConst.ColorType CurrentColor;
+    public Color CurrentColor;
     public EnumConst.DrawType CurrentDrawType;
     public EnumConst.MenuType CurrentMenu;
     public static MenuManager Instance;
@@ -15,6 +15,7 @@ public class MenuManager : MonoBehaviour
         {
             MenuDict.Add(menu.gameObject.name, menu);
         }
+        CurrentColor = Color.green;
     }
     public List<PieMenu> MenuList = new List<PieMenu>();
     public List<int> MenuStartIndex;
@@ -35,7 +36,24 @@ public class MenuManager : MonoBehaviour
         }
         else if (cmd.Contains("Color")) 
         {
-            CurrentColor = (EnumConst.ColorType)id;
+            switch (id) 
+            {
+                case 0:
+                    CurrentColor = Color.green;
+                    break;
+                case 1:
+                    CurrentColor = Color.red;
+                    break;
+                case 2:
+                    CurrentColor = Color.yellow;
+                    break;
+                case 3:
+                    CurrentColor = Color.blue;
+                    break;
+                case 4:
+                    CurrentColor = Color.magenta;
+                    break;
+            }
         }
         else 
         {   
