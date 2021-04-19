@@ -12,7 +12,7 @@ public class Line : Shape
     }
     override public void drawShape(Vector3 startPoint, Vector3 endPoint){
         GL.Begin(GL.LINES);
-        GL.Color(Color.black);
+        GL.Color(EnumConst.ColorsMap[(int)MenuManager.Instance.CurrentColor]);
         GL.Vertex(startPoint);
         GL.Vertex(endPoint);
         GL.End();
