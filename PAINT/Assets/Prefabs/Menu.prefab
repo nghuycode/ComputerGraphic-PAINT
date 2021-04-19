@@ -1,95 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &624256154481528481
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 9132302197408903943}
-  m_Layer: 0
-  m_Name: Plus
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &9132302197408903943
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 624256154481528481}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 6933038349726952408}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &979155712090970304
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1897342157949789927}
-  m_Layer: 0
-  m_Name: Divide
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1897342157949789927
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 979155712090970304}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 6933038349726952408}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3306482193650970338
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2761349913507662006}
-  m_Layer: 0
-  m_Name: Multiply
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2761349913507662006
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3306482193650970338}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 6933038349726952408}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6933038347954094447
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,11 +52,11 @@ MonoBehaviour:
   - ColorBlue
   - ColorPurple
   icons:
-  - {fileID: 2800000, guid: af6a1404e62e95c4b8868bd0df8d250d, type: 3}
-  - {fileID: 2800000, guid: af6a1404e62e95c4b8868bd0df8d250d, type: 3}
-  - {fileID: 2800000, guid: af6a1404e62e95c4b8868bd0df8d250d, type: 3}
-  - {fileID: 2800000, guid: af6a1404e62e95c4b8868bd0df8d250d, type: 3}
-  - {fileID: 2800000, guid: af6a1404e62e95c4b8868bd0df8d250d, type: 3}
+  - {fileID: 2800000, guid: 649ec8845c9124843a75854eae554929, type: 3}
+  - {fileID: 2800000, guid: e8a66120cd241da41ad6b275d33738da, type: 3}
+  - {fileID: 2800000, guid: 177b799ade17e8b4ab3c25a0dae290a5, type: 3}
+  - {fileID: 2800000, guid: b1a9ee68f7347814aa91a4137eca5b08, type: 3}
+  - {fileID: 2800000, guid: f286a7b52e958fb49bb4c31920c29038, type: 3}
   iconSize: 128
   spacing: 48
   speed: 8
@@ -202,8 +112,8 @@ MonoBehaviour:
   - Rectangle
   - Square
   icons:
-  - {fileID: 2800000, guid: af6a1404e62e95c4b8868bd0df8d250d, type: 3}
-  - {fileID: 2800000, guid: af6a1404e62e95c4b8868bd0df8d250d, type: 3}
+  - {fileID: 2800000, guid: c51020e4ad9558641ba52d2e387f13c6, type: 3}
+  - {fileID: 2800000, guid: e405406134bd5eb45bd61bd29265fd86, type: 3}
   iconSize: 128
   spacing: 48
   speed: 8
@@ -259,8 +169,8 @@ MonoBehaviour:
   - Arrow
   - Star
   icons:
-  - {fileID: 2800000, guid: af6a1404e62e95c4b8868bd0df8d250d, type: 3}
-  - {fileID: 2800000, guid: af6a1404e62e95c4b8868bd0df8d250d, type: 3}
+  - {fileID: 2800000, guid: e61b6811f1af1604d81a84aedf4f995f, type: 3}
+  - {fileID: 2800000, guid: 97510af2d4cc0bf4fa95ad5c5c9cbcc9, type: 3}
   iconSize: 128
   spacing: 48
   speed: 8
@@ -316,8 +226,8 @@ MonoBehaviour:
   - Isosceles
   - Equilateral
   icons:
-  - {fileID: 2800000, guid: af6a1404e62e95c4b8868bd0df8d250d, type: 3}
-  - {fileID: 2800000, guid: af6a1404e62e95c4b8868bd0df8d250d, type: 3}
+  - {fileID: 2800000, guid: b47d843c8b54bc24eac6bf37e62dedcc, type: 3}
+  - {fileID: 2800000, guid: 726f5056759cc174b97463518e29b192, type: 3}
   iconSize: 128
   spacing: 48
   speed: 8
@@ -426,8 +336,8 @@ MonoBehaviour:
   - Pentagon
   - Hexagon
   icons:
-  - {fileID: 2800000, guid: af6a1404e62e95c4b8868bd0df8d250d, type: 3}
-  - {fileID: 2800000, guid: af6a1404e62e95c4b8868bd0df8d250d, type: 3}
+  - {fileID: 2800000, guid: ef3e9291a5a0b2e4f91ec4e2ded32278, type: 3}
+  - {fileID: 2800000, guid: 5b3df50352f21dc408035834c08473e1, type: 3}
   iconSize: 128
   spacing: 48
   speed: 8
@@ -484,7 +394,7 @@ MonoBehaviour:
   - Eclipse
   icons:
   - {fileID: 2800000, guid: af6a1404e62e95c4b8868bd0df8d250d, type: 3}
-  - {fileID: 2800000, guid: af6a1404e62e95c4b8868bd0df8d250d, type: 3}
+  - {fileID: 2800000, guid: 2658bae01d02c324487fa3fb9ed357c2, type: 3}
   iconSize: 128
   spacing: 48
   speed: 8
@@ -589,11 +499,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 9132302197408903943}
-  - {fileID: 8743738057241125065}
-  - {fileID: 2761349913507662006}
-  - {fileID: 1897342157949789927}
+  m_Children: []
   m_Father: {fileID: 6933038349740364934}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -617,10 +523,10 @@ MonoBehaviour:
   - Multiply
   - Divide
   icons:
-  - {fileID: 2800000, guid: af6a1404e62e95c4b8868bd0df8d250d, type: 3}
-  - {fileID: 2800000, guid: af6a1404e62e95c4b8868bd0df8d250d, type: 3}
-  - {fileID: 2800000, guid: af6a1404e62e95c4b8868bd0df8d250d, type: 3}
-  - {fileID: 2800000, guid: af6a1404e62e95c4b8868bd0df8d250d, type: 3}
+  - {fileID: 2800000, guid: 20c42375a8454014db0849c1da362180, type: 3}
+  - {fileID: 2800000, guid: 6c04df303ad6572408373cb8e9d2a2a6, type: 3}
+  - {fileID: 2800000, guid: 3484575fa635bcd47be0225599f11c0b, type: 3}
+  - {fileID: 2800000, guid: 10fdf2455d8fb9c469113110857e66f0, type: 3}
   iconSize: 128
   spacing: 48
   speed: 8
@@ -704,33 +610,3 @@ MonoBehaviour:
   skin: {fileID: 11400000, guid: 519b138669afa4427805632087592c36, type: 2}
   scale: 0
   angle: 0
---- !u!1 &7823314894502307911
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8743738057241125065}
-  m_Layer: 0
-  m_Name: Minus
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8743738057241125065
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7823314894502307911}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 6933038349726952408}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
