@@ -29,11 +29,11 @@ public class PieMenuManager : MonoBehaviour
 
 	public void Show (PieMenu menu)
 	{
-		// if (display.Contains (menu))
-		// 	return;
-		// foreach (PieMenu m in display) {
-		// 	StartCoroutine (_Hide (m));
-		// }
+		if (display.Contains (menu))
+			return;
+		foreach (PieMenu m in display) {
+			StartCoroutine (_Hide (m));
+		}
 		display.Add (menu);
 		StartCoroutine (_Show (menu));
 	}
@@ -98,8 +98,7 @@ public class PieMenuManager : MonoBehaviour
 				} catch(ArgumentOutOfRangeException) {
 					Debug.LogWarning("PieMenu commands have not been correctly set up.");
 				}
-				Debug.Log(i);
-				// MenuManager.Instance.ReceiveCommand(i);
+				MenuManager.Instance.ReceiveCommand(cmd);
 				// menu.gameObject.SendMessage ("OnSelect", cmd, SendMessageOptions.DontRequireReceiver);
 			}
 		}

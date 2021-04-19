@@ -7,15 +7,24 @@ public class MenuManager : MonoBehaviour
     public static MenuManager Instance;
     private void Awake() {
         Instance = this;
-
+        foreach (PieMenu menu in MenuList) 
+        {
+            MenuDict.Add(menu.gameObject.name, menu);
+        }
     }
-    public List<GameObject> MenuList = new List<GameObject>();
-    private void Update() {
-        Debug.Log(MenuList.Count);
-    }
-    public void ReceiveCommand(int id) 
+    public List<PieMenu> MenuList = new List<PieMenu>();
+    public Dictionary<string, PieMenu> MenuDict = new Dictionary<string, PieMenu>();
+    public void ReceiveCommand(string cmd) 
     {
-        MenuList[id].GetComponent<PieMenu>().ShowMenu();
+        if (cmd.Contains("Menu")) 
+        {
+            Debug.Log("Menu: " + cmd);
+            MenuDict[cmd].ShowMenu();
+        }
+        else 
+        {   
+            Debug.Log("Action: " + cmd);    
+        }   
     }
 
 }
