@@ -24,7 +24,7 @@ public class InputHandler : MonoBehaviour
         {
             startTouchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0,0,1);
             _state = TouchState.Start;
-            Drawer.Instance.StartDrawing(Drawer.DrawingType.Line);
+            Drawer.Instance.StartDrawing(Drawer.DrawingType.Rectangle);
         }
 
         if (_state == TouchState.Start)
@@ -50,8 +50,6 @@ public class InputHandler : MonoBehaviour
         float disX = Mathf.Abs(Input.mousePosition.x - startTouchPos.x);
         float disY = Mathf.Abs(Input.mousePosition.y - startTouchPos.y);
         currentTouchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0,0,1);
-        //Send notification to the listener
-
     }
     #endregion
     private void Update()
