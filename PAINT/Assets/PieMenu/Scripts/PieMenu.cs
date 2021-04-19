@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class PieMenu : MonoBehaviour
 {
 
-	
+	public bool IsShowing;
 	public List<string> commands;
 	public List<Texture> icons;
 	
@@ -28,6 +28,18 @@ public class PieMenu : MonoBehaviour
 	
 	void OnMouseUp() {
 		manager.Show(this);
+	}
+	private void Update() {
+		if (Input.GetMouseButtonDown(0)) 
+		{
+			manager.Hide(this);
+		}
+		if (Input.GetMouseButtonDown(1)) 
+		{
+			this.transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			manager.Show(this);
+			IsShowing = true;
+		}
 	}
 	
 }
