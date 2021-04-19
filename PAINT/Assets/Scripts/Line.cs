@@ -5,10 +5,10 @@ using UnityEngine;
 public class Line : Shape
 {
     Vector3 startPoint, endPoint;
-    public Line(){}
-    public Line(Vector3 startPoint, Vector3 endPoint){
-        this.startPoint = startPoint;
-        this.endPoint = endPoint;
+    public Line(){
+        this.startPoint = InputHandler.Instance.startTouchPos;
+        this.endPoint = InputHandler.Instance.currentTouchPos;
+        this.color = MenuManager.Instance.CurrentColor;
     }
     override public void drawShape(Vector3 startPoint, Vector3 endPoint){
         GL.Begin(GL.LINES);
@@ -19,7 +19,7 @@ public class Line : Shape
     }
     override public void drawShape(){
         GL.Begin(GL.LINES);
-        GL.Color(Color.black);
+        GL.Color(this.color);
         GL.Vertex(this.startPoint);
         GL.Vertex(this.endPoint);
         GL.End();
