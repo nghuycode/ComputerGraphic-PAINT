@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using static Enums;
 public class InputHandler : MonoBehaviour
 {
     public enum TouchState 

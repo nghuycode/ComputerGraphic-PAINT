@@ -38,7 +38,7 @@ public class Demo : MonoBehaviour
                 EquilTriangles equilTriangle = new EquilTriangles(startPoint, endPoint);
                 list.Add(equilTriangle);
                 break;
-            case DrawType.Isosceles:
+            case DrawType.RightTriangle:
                 RightTriangle rightTriangle = new RightTriangle(startPoint, endPoint);
                 list.Add(rightTriangle);
                 break;
@@ -53,6 +53,10 @@ public class Demo : MonoBehaviour
             case DrawType.Circle:
                 Circle circle = new Circle(startPoint, endPoint);
                 list.Add(circle);
+                break;
+            case DrawType.Ellipse:
+                Ellipse eclipse = new Ellipse(startPoint, endPoint);
+                list.Add(eclipse);
                 break;
         }
         
