@@ -18,7 +18,7 @@ public class Drawer : MonoBehaviour
     List<Shape> shapes = new List<Shape>();
     public Material mat;
     private void OnPostRender(){
-        GL.Clear(true, true, Color.black);
+        GL.Clear(true, true, Color.white);
         GL.PushMatrix();
         mat.SetPass(0);
         foreach (Shape shape in shapes){
@@ -26,6 +26,8 @@ public class Drawer : MonoBehaviour
         }
         if (drawingType == DrawingType.Line && isDrawing)
             ShapeRepository.Line.drawShape(InputHandler.Instance.startTouchPos, InputHandler.Instance.currentTouchPos);
+        if (drawingType == DrawingType.Rectangle && isDrawing)
+            ShapeRepository.Rectangle.drawShape(InputHandler.Instance.startTouchPos, InputHandler.Instance.currentTouchPos);
         GL.PopMatrix();
     }
 
