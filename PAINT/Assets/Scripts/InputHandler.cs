@@ -14,6 +14,10 @@ public class InputHandler : MonoBehaviour
     public Vector3 startTouchPos, currentTouchPos;
     private float diffX, diffY;
     private float startFrame;
+    public static InputHandler Instance;
+    private void Awake() {
+        Instance = this;
+    }
     public GameObject GetHoveredObject()
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
