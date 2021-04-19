@@ -24,7 +24,7 @@ public class InputHandler : MonoBehaviour
         {
             startTouchPos = Camera.main.ScreenToWorldPoint(Input.mousePosition) + new Vector3(0,0,1);
             _state = TouchState.Start;
-            Drawer.Instance.StartDrawing(Drawer.DrawingType.Rectangle);
+            Drawer.Instance.StartDrawing(Drawer.DrawingType.Line);
         }
 
         if (_state == TouchState.Start)
