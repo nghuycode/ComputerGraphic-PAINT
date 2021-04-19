@@ -47,11 +47,7 @@ public class InputHandler : MonoBehaviour
     {
         float disX = Mathf.Abs(Input.mousePosition.x - startTouchPos.x);
         float disY = Mathf.Abs(Input.mousePosition.y - startTouchPos.y);
-        currentTouchPos = Input.mousePosition;
-
-        Debug.Log("Start Position:" + startTouchPos);
-        Debug.Log("Current Position:" + Input.mousePosition);
-
+        currentTouchPos = Input.mousePosition;  
         //Send notification to the listener
     }
     #endregion

@@ -98,7 +98,7 @@ public class PieMenuManager : MonoBehaviour
 				} catch(ArgumentOutOfRangeException) {
 					Debug.LogWarning("PieMenu commands have not been correctly set up.");
 				}
-				MenuManager.Instance.ReceiveCommand(cmd);
+				MenuManager.Instance.ReceiveCommand(i, cmd);
 				// menu.gameObject.SendMessage ("OnSelect", cmd, SendMessageOptions.DontRequireReceiver);
 			}
 		}
