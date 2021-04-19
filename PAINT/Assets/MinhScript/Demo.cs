@@ -62,8 +62,8 @@ public class Demo : MonoBehaviour
     {
         if (list.Count == 0) return;
         list[list.Count - 1].Update(startPoint, endPoint);
-
     }
+
     public void FinishAShape()
     {
         //Not implement yet
