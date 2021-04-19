@@ -6,6 +6,7 @@ using System.Collections;
 public class PieMenuManager : MonoBehaviour
 {
 
+	[SerializeField]
 	private List<PieMenu> display = new List<PieMenu> ();
 	private static List<Matrix4x4> stack = new List<Matrix4x4> ();
 	private static PieMenuManager _instance = null;
@@ -28,11 +29,11 @@ public class PieMenuManager : MonoBehaviour
 
 	public void Show (PieMenu menu)
 	{
-		if (display.Contains (menu))
-			return;
-		foreach (PieMenu m in display) {
-			StartCoroutine (_Hide (m));
-		}
+		// if (display.Contains (menu))
+		// 	return;
+		// foreach (PieMenu m in display) {
+		// 	StartCoroutine (_Hide (m));
+		// }
 		display.Add (menu);
 		StartCoroutine (_Show (menu));
 	}
@@ -97,8 +98,9 @@ public class PieMenuManager : MonoBehaviour
 				} catch(ArgumentOutOfRangeException) {
 					Debug.LogWarning("PieMenu commands have not been correctly set up.");
 				}
-				
-				menu.gameObject.SendMessage ("OnSelect", cmd, SendMessageOptions.DontRequireReceiver);
+				Debug.Log(i);
+				// MenuManager.Instance.ReceiveCommand(i);
+				// menu.gameObject.SendMessage ("OnSelect", cmd, SendMessageOptions.DontRequireReceiver);
 			}
 		}
 		PopGUI ();
