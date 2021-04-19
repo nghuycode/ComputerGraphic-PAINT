@@ -1,6 +1,4 @@
-using UnityEngine;
-
-public class Enums:MonoBehaviour 
+public static class Enums
 {
     public enum ShapeTypes
     {
@@ -9,5 +7,6 @@ public class Enums:MonoBehaviour
         RightTriangle,
         Rectangle,
         Square,
+        Circle
     }
 }

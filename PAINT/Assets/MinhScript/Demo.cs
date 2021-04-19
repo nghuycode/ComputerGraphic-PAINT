@@ -50,6 +50,10 @@ public class Demo : MonoBehaviour
                 Square square = new Square(startPoint, endPoint);
                 list.Add(square);
                 break;
+            case ShapeTypes.Circle:
+                Circle circle = new Circle(startPoint, endPoint);
+                list.Add(circle);
+                break;
         }
         
     }

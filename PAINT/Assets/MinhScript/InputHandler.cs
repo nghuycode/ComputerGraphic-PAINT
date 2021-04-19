@@ -30,9 +30,9 @@ public class InputHandler : MonoBehaviour
         {   
             if (currentTouchPos != startTouchPos)
             {
-               
                 _state = TouchState.Drag;
-                Demo.instance.CreateAShape(ShapeTypes.EquilTriangle, startTouchPos, currentTouchPos);
+                //Code To Create A Shape
+                Demo.instance.CreateAShape(ShapeTypes.Circle, startTouchPos, currentTouchPos);
                 Drag();
             }
         }
