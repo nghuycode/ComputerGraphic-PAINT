@@ -5,14 +5,14 @@ using UnityEngine;
 public class Rectangle : Shape
 {
     Vector3 startPoint, endPoint;
-    public Rectangle(){}
-    public Rectangle(Vector3 startPoint, Vector3 endPoint){
-        this.startPoint = startPoint;
-        this.endPoint = endPoint;
+    public Rectangle(){
+        this.startPoint = InputHandler.Instance.startTouchPos;
+        this.endPoint = InputHandler.Instance.currentTouchPos;
+        this.color = MenuManager.Instance.CurrentColor;
     }
     override public void drawShape(){
         GL.Begin(GL.LINES);
-        GL.Color(Color.black);
+        GL.Color(this.color);
 
         GL.Vertex3(startPoint.x, startPoint.y, startPoint.z);
         GL.Vertex3(startPoint.x, endPoint.y, startPoint.z);
@@ -30,7 +30,7 @@ public class Rectangle : Shape
     }
     override public void drawShape(Vector3 startPoint, Vector3 endPoint){
         GL.Begin(GL.LINES);
-        GL.Color(Color.black);
+        GL.Color(MenuManager.Instance.CurrentColor);
 
         GL.Vertex3(startPoint.x, startPoint.y, startPoint.z);
         GL.Vertex3(startPoint.x, endPoint.y, startPoint.z);

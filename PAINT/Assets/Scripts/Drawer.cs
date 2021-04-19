@@ -19,10 +19,12 @@ public class Drawer : MonoBehaviour
         foreach (Shape shape in shapes){
             shape.drawShape();
         }
-        if (drawingType == EnumConst.DrawType.Line && isDrawing)
-            ShapeRepository.Line.drawShape(InputHandler.Instance.startTouchPos, InputHandler.Instance.currentTouchPos);
-        if (drawingType == EnumConst.DrawType.Rectangle && isDrawing)
-            ShapeRepository.Rectangle.drawShape(InputHandler.Instance.startTouchPos, InputHandler.Instance.currentTouchPos);
+        if (isDrawing){
+            if (drawingType == EnumConst.DrawType.Line)
+                ShapeRepository.Line.drawShape(InputHandler.Instance.startTouchPos, InputHandler.Instance.currentTouchPos);
+            if (drawingType == EnumConst.DrawType.Rectangle)
+                ShapeRepository.Rectangle.drawShape(InputHandler.Instance.startTouchPos, InputHandler.Instance.currentTouchPos);
+        }
         GL.PopMatrix();
     }
 
@@ -34,8 +36,12 @@ public class Drawer : MonoBehaviour
     public void StopDrawing(){
         isDrawing = false;
         if (drawingType == EnumConst.DrawType.Line){
-            Line line = new Line(InputHandler.Instance.startTouchPos, InputHandler.Instance.currentTouchPos);
+            Line line = new Line();
             shapes.Add(line);
+        }
+        if (drawingType == EnumConst.DrawType.Rectangle){
+            Rectangle rectangle = new Rectangle();
+            shapes.Add(rectangle);
         }
     }
 }
