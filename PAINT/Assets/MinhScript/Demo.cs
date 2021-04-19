@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
-using static Enums;
+using static EnumConst;
 public class Demo : MonoBehaviour
 {
     List<Shape> list = new List<Shape>();
@@ -26,31 +26,31 @@ public class Demo : MonoBehaviour
         GL.PopMatrix();
     }
 
-    public void CreateAShape(ShapeTypes type, Vector3 startPoint, Vector3 endPoint)
+    public void CreateAShape(DrawType type, Vector3 startPoint, Vector3 endPoint)
     {
         switch (type)
         {
-            case ShapeTypes.Line:
+            case DrawType.Line:
                 Line line = new Line(startPoint, endPoint);
                 list.Add(line);
                 break;
-            case ShapeTypes.EquilTriangle:
+            case DrawType.Equilateral:
                 EquilTriangles equilTriangle = new EquilTriangles(startPoint, endPoint);
                 list.Add(equilTriangle);
                 break;
-            case ShapeTypes.RightTriangle:
+            case DrawType.Isosceles:
                 RightTriangle rightTriangle = new RightTriangle(startPoint, endPoint);
                 list.Add(rightTriangle);
                 break;
-            case ShapeTypes.Rectangle:
+            case DrawType.Rectangle:
                 Rectangle rectangle = new Rectangle(startPoint, endPoint);
                 list.Add(rectangle);
                 break;
-            case ShapeTypes.Square:
+            case DrawType.Square:
                 Square square = new Square(startPoint, endPoint);
                 list.Add(square);
                 break;
-            case ShapeTypes.Circle:
+            case DrawType.Circle:
                 Circle circle = new Circle(startPoint, endPoint);
                 list.Add(circle);
                 break;
@@ -62,8 +62,8 @@ public class Demo : MonoBehaviour
     {
         if (list.Count == 0) return;
         list[list.Count - 1].Update(startPoint, endPoint);
-
     }
+
     public void FinishAShape()
     {
         //Not implement yet

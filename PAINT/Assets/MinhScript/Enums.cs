@@ -7,6 +7,9 @@ public static class Enums
         RightTriangle,
         Rectangle,
         Square,
-        Circle
+        Circle, 
+        Elip, 
+        Pentagon,
+
     }
 }
