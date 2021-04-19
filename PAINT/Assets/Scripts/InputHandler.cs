@@ -18,41 +18,6 @@ public class InputHandler : MonoBehaviour
     private void Awake() {
         Instance = this;
     }
-    public GameObject GetHoveredObject()
-    {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
-        RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero, Mathf.Infinity, LayerMask.GetMask("ClickableObject"));
-
-        if (hit.collider == null) return null;
-        return hit.collider.gameObject;
-    }
-    public GameObject GetHoldObject()
-    {
-        if (!Input.GetMouseButtonDown(0)) return null;
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
-        RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero, Mathf.Infinity, LayerMask.GetMask("ClickableObject"));
-
-        if (hit.collider == null || Input.GetMouseButtonUp(0)) return null;
-        return hit.collider.gameObject;
-    }
-    public GameObject GetClickedObject()
-    {
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
-        RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero, Mathf.Infinity, LayerMask.GetMask("ClickableObject"));
-
-        if (hit.collider == null) return null;
-        if (Input.GetMouseButtonUp(0))
-            return hit.collider.gameObject;
-        else return null;
-    }
-
-    public bool DropObject()
-    {
-        return (Input.GetMouseButtonUp(0));
-    }
     private void MouseCheck()
     {
         if (Input.GetMouseButtonDown(0) && _state == TouchState.Drop)
