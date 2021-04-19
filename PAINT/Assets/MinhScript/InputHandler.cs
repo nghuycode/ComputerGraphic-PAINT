@@ -32,7 +32,7 @@ public class InputHandler : MonoBehaviour
             {
                
                 _state = TouchState.Drag;
-                Demo.instance.CreateAShape(ShapeTypes.Square, startTouchPos, currentTouchPos);
+                Demo.instance.CreateAShape(ShapeTypes.EquilTriangle, startTouchPos, currentTouchPos);
                 Drag();
             }
         }

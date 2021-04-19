@@ -147,12 +147,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 820152405}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e33e1ffa7f577c4f8a811c4fd92fa30, type: 3}
+  m_Script: {fileID: 11500000, guid: 03ef632044e16084b82be265bb9aaf08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _state: 1
-  startTouchPos: {x: 0, y: 0, z: 0}
-  currentTouchPos: {x: 0, y: 0, z: 0}
 --- !u!4 &820152407
 Transform:
   m_ObjectHideFlags: 0
@@ -178,6 +175,7 @@ GameObject:
   - component: {fileID: 915518835}
   - component: {fileID: 915518834}
   - component: {fileID: 915518833}
+  - component: {fileID: 915518836}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -203,7 +201,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -220,7 +218,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 1000
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -250,6 +248,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &915518836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915518832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de466a57f2dbccc469b4b23880b8bac5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mat: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!1001 &2006850731
 PrefabInstance:
   m_ObjectHideFlags: 0
