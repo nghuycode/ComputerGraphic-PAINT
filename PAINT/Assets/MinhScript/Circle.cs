@@ -26,6 +26,6 @@ public class Circle : Shape
         float delta = Mathf.Min(Mathf.Abs(deltaX), Mathf.Abs(deltaY));
         Vector3 secondPoint = new Vector3(startPoint.x + deltaX / Mathf.Abs(deltaX) * delta, startPoint.y + deltaY / Mathf.Abs(deltaY) * delta);
         center = (startPoint + secondPoint) / 2;
-        r = Vector3.Distance(center, startPoint);
+        r = Vector3.Distance(center, startPoint)/ Mathf.Sqrt(2);
     }
 }

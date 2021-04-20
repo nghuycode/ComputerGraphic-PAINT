@@ -78,7 +78,38 @@ public class Demo : MonoBehaviour
                 Ellipse eclipse = new Ellipse(startPoint, endPoint);
                 list.Add(eclipse);
                 break;
-
+            case DrawType.Pentagon:
+                Pentagon pentagon = new Pentagon(startPoint, endPoint);
+                list.Add(pentagon);
+                break;
+            case DrawType.Hexagon:
+                Hexagon hexagon = new Hexagon(startPoint, endPoint);
+                list.Add(hexagon);
+                break;
+            case DrawType.Star:
+                Star star = new Star(startPoint, endPoint);
+                list.Add(star);
+                break;
+            case DrawType.Arrow:
+                Arrow arrow = new Arrow(startPoint, endPoint);
+                list.Add(arrow);
+                break;
+            case DrawType.Plus:
+                Plus plus = new Plus(startPoint, endPoint);
+                list.Add(plus);
+                break;
+            case DrawType.Minus:
+                Minus minus = new Minus(startPoint, endPoint);
+                list.Add(minus);
+                break;
+            case DrawType.Multiply:
+                Multiply multiply = new Multiply(startPoint, endPoint);
+                list.Add(multiply);
+                break;
+            case DrawType.Divide:
+                Divide divide = new Divide(startPoint, endPoint);
+                list.Add(divide);
+                break;
         }
     }
 
