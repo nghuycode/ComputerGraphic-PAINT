@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using System.Collections.Generic;
 using static EnumConst;
 public class Demo : MonoBehaviour
@@ -6,28 +7,47 @@ public class Demo : MonoBehaviour
     List<Shape> list = new List<Shape>();
     public Material mat;
     public static Demo instance;
-
+    public bool wasColor = false;
+    bool isBegin = true;
+    bool wasDraw = false;
     private void Awake()
     {
         instance = this;
+        
     }
+
+
 
 
     private void OnPostRender()
     {
-        GL.PushMatrix();
-        mat.SetPass(0);
-        GL.LoadPixelMatrix();
-        GL.Color(Color.white);
-        foreach (Shape shape in list)
+        if (ColorManager.instance.texture != null)
         {
-            shape.Draw();
+            GL.PushMatrix();
+            mat.SetPass(0);
+            GL.LoadPixelMatrix();
+            DrawSceneBackground();
+            GL.Color(Color.white);
+            foreach (Shape shape in list)
+            {
+                shape.Draw();
+
+            }
+            GL.PopMatrix();
         }
-        GL.PopMatrix();
+        if ((wasColor == true) || (isBegin == true) || (wasDraw == true))
+        {
+            isBegin = false;
+            ColorManager.instance.TakeScreenShot();
+            wasColor = false;
+            wasDraw = false;
+        }
+
     }
 
     public void CreateAShape(DrawType type, Vector3 startPoint, Vector3 endPoint)
     {
+        Debug.Log(type);
         switch (type)
         {
             case DrawType.Line:
@@ -58,8 +78,8 @@ public class Demo : MonoBehaviour
                 Ellipse eclipse = new Ellipse(startPoint, endPoint);
                 list.Add(eclipse);
                 break;
+
         }
-        
     }
 
     public void UpdateAShape(Vector3 startPoint, Vector3 endPoint)
@@ -70,6 +90,27 @@ public class Demo : MonoBehaviour
 
     public void FinishAShape()
     {
-        //Not implement yet
+        wasDraw = true;
     }
+
+    public void Coloring(int x,int y, Color color)
+    {
+        ColorManager.instance.Coloring(x, y, color);
+        wasColor = true;
+    }
+    public void DrawSceneBackground()
+    {
+        Texture2D texture = ColorManager.instance.texture;
+        GL.Begin(GL.LINES);        
+        for (int i = 0;i < Screen.width;i++)
+            for (int j = 0;j < Screen.height;j++)
+            {
+                GL.Color(texture.GetPixel(i, j));
+                GL.Vertex3(i, j, 0);
+                GL.Vertex3(i + 1, j, 0);
+            }
+        GL.End();
+    }
+
+   
 }

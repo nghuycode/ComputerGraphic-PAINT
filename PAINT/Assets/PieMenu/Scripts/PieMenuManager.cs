@@ -7,7 +7,7 @@ public class PieMenuManager : MonoBehaviour
 {
 
 	[SerializeField]
-	private List<PieMenu> display = new List<PieMenu> ();
+	public List<PieMenu> display = new List<PieMenu> ();
 	private static List<Matrix4x4> stack = new List<Matrix4x4> ();
 	private static PieMenuManager _instance = null;
 
@@ -41,6 +41,7 @@ public class PieMenuManager : MonoBehaviour
 	public void Hide (PieMenu menu)
 	{
 		StartCoroutine (_Hide (menu));
+		Debug.Log("hide");
 	}
 
 	private IEnumerator _Hide (PieMenu menu)
@@ -92,6 +93,7 @@ public class PieMenuManager : MonoBehaviour
 			float iy = (Mathf.Sin (theta) * radius) - (menu.iconSize / 2);
 			if (GUI.Button (new Rect (ix, iy, menu.iconSize, menu.iconSize), menu.icons[i])) {
 				StartCoroutine (_Hide (menu));
+
 				string cmd = "PieMenuCommandIsMissing";
 				try {
 					cmd = menu.commands[i];
@@ -100,7 +102,7 @@ public class PieMenuManager : MonoBehaviour
 				}
 				MenuManager.Instance.ReceiveCommand(i, cmd);
 				// menu.gameObject.SendMessage ("OnSelect", cmd, SendMessageOptions.DontRequireReceiver);
-			}
+			}	
 		}
 		PopGUI ();
 		

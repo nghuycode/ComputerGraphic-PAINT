@@ -3,7 +3,7 @@ public static class EnumConst
 {
     public enum DrawType 
     {
-       Line, RightTriangle, Equilateral, Rectangle, Square, Circle, Ellipse, Pentagon, Hexagon, Arrow, Star, Plus, Minus, Multiply, Divide    
+       Line, RightTriangle, Equilateral, Rectangle, Square, Circle, Ellipse, Pentagon, Hexagon, Arrow, Star, Plus, Minus, Multiply, Divide, Paint  
     }
     public enum MenuType 
     {

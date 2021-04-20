@@ -36,6 +36,7 @@ public class MenuManager : MonoBehaviour
         }
         else if (cmd.Contains("Color")) 
         {
+            CurrentDrawType = EnumConst.DrawType.Paint;
             switch (id) 
             {
                 case 0:
@@ -63,6 +64,10 @@ public class MenuManager : MonoBehaviour
     private int GetRealID(EnumConst.MenuType menu, int id) 
     {
         return MenuStartIndex[(int)menu] + id;
+    }
+    public bool IsShowingMenu()
+    {
+        return (PieMenuManager.Instance.display.Count > 0);
     }
 
 }
