@@ -73,6 +73,21 @@ public class Demo : MonoBehaviour
             case DrawType.Arrow:
                 Arrow arrow = new Arrow(startPoint, endPoint);
                 list.Add(arrow);
+            case DrawType.Plus:
+                Plus plus = new Plus(startPoint, endPoint);
+                list.Add(plus);
+                break;
+            case DrawType.Minus:
+                Minus minus = new Minus(startPoint, endPoint);
+                list.Add(minus);
+                break;
+            case DrawType.Multiply:
+                Multiply multiply = new Multiply(startPoint, endPoint);
+                list.Add(multiply);
+                break;
+            case DrawType.Divide:
+                Divide divide = new Divide(startPoint, endPoint);
+                list.Add(divide);
                 break;
         }
         
