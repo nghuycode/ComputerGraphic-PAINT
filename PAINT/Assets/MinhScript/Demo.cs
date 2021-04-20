@@ -73,6 +73,7 @@ public class Demo : MonoBehaviour
             case DrawType.Arrow:
                 Arrow arrow = new Arrow(startPoint, endPoint);
                 list.Add(arrow);
+                break;
             case DrawType.Plus:
                 Plus plus = new Plus(startPoint, endPoint);
                 list.Add(plus);
