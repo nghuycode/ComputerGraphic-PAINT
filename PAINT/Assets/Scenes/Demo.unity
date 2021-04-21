@@ -402,72 +402,72 @@ PrefabInstance:
     - target: {fileID: 6933038347954094444, guid: f11fc9d145216cb45a4a1c1b1278b10f,
         type: 3}
       propertyPath: spacing
-      value: 8
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 6933038347954094444, guid: f11fc9d145216cb45a4a1c1b1278b10f,
         type: 3}
       propertyPath: iconSize
-      value: 32
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 6933038347961377134, guid: f11fc9d145216cb45a4a1c1b1278b10f,
         type: 3}
       propertyPath: spacing
-      value: 8
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 6933038347961377134, guid: f11fc9d145216cb45a4a1c1b1278b10f,
         type: 3}
       propertyPath: iconSize
-      value: 32
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 6933038348116064940, guid: f11fc9d145216cb45a4a1c1b1278b10f,
         type: 3}
       propertyPath: spacing
-      value: 8
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 6933038348116064940, guid: f11fc9d145216cb45a4a1c1b1278b10f,
         type: 3}
       propertyPath: iconSize
-      value: 32
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 6933038348421059671, guid: f11fc9d145216cb45a4a1c1b1278b10f,
         type: 3}
       propertyPath: spacing
-      value: 8
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 6933038348421059671, guid: f11fc9d145216cb45a4a1c1b1278b10f,
         type: 3}
       propertyPath: iconSize
-      value: 32
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 6933038348604215474, guid: f11fc9d145216cb45a4a1c1b1278b10f,
         type: 3}
       propertyPath: spacing
-      value: 8
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 6933038348604215474, guid: f11fc9d145216cb45a4a1c1b1278b10f,
         type: 3}
       propertyPath: iconSize
-      value: 32
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 6933038348920016312, guid: f11fc9d145216cb45a4a1c1b1278b10f,
         type: 3}
       propertyPath: spacing
-      value: 8
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 6933038348920016312, guid: f11fc9d145216cb45a4a1c1b1278b10f,
         type: 3}
       propertyPath: iconSize
-      value: 32
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 6933038349034882529, guid: f11fc9d145216cb45a4a1c1b1278b10f,
         type: 3}
       propertyPath: spacing
-      value: 8
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 6933038349034882529, guid: f11fc9d145216cb45a4a1c1b1278b10f,
         type: 3}
       propertyPath: iconSize
-      value: 32
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 6933038349453441720, guid: f11fc9d145216cb45a4a1c1b1278b10f,
         type: 3}
@@ -547,12 +547,12 @@ PrefabInstance:
     - target: {fileID: 6933038349726952422, guid: f11fc9d145216cb45a4a1c1b1278b10f,
         type: 3}
       propertyPath: spacing
-      value: 8
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 6933038349726952422, guid: f11fc9d145216cb45a4a1c1b1278b10f,
         type: 3}
       propertyPath: iconSize
-      value: 32
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 6933038349740364935, guid: f11fc9d145216cb45a4a1c1b1278b10f,
         type: 3}
