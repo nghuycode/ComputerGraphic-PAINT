@@ -7,6 +7,7 @@ public class InputHandler : MonoBehaviour
     }
 
     private TouchState _state = TouchState.Drop;
+    [SerializeField]
     Vector3 startTouchPos, currentTouchPos;
     private float diffX, diffY;
     private float startFrame;
@@ -18,14 +19,10 @@ public class InputHandler : MonoBehaviour
     {
        
         currentTouchPos = Input.mousePosition;
-
-        
         if (Input.GetMouseButtonDown(0) && _state == TouchState.Drop)
         {
             _state = TouchState.Start;
             startTouchPos = currentTouchPos;
-            if(MenuManager.Instance.CurrentDrawType == EnumConst.DrawType.Paint && !MenuManager.Instance.IsShowingMenu())
-                Demo.instance.Coloring((int)Input.mousePosition.x, (int)Input.mousePosition.y, MenuManager.Instance.CurrentColor);
         }
         
         if (_state == TouchState.Start)
@@ -35,7 +32,7 @@ public class InputHandler : MonoBehaviour
                 _state = TouchState.Drag;
                 //Code To Create A Shape
                 if (!MenuManager.Instance.IsShowingMenu())
-                Demo.instance.CreateAShape(MenuManager.Instance.CurrentDrawType, startTouchPos, currentTouchPos);
+                    Demo.instance.CreateAShape(MenuManager.Instance.CurrentDrawType, startTouchPos, currentTouchPos);
                 Drag();
             }
         }
@@ -44,7 +41,6 @@ public class InputHandler : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             _state = TouchState.Drop;
-            Demo.instance.FinishAShape();
         }
     }
 

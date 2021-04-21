@@ -7,42 +7,23 @@ public class Demo : MonoBehaviour
     List<Shape> list = new List<Shape>();
     public Material mat;
     public static Demo instance;
-    public bool wasColor = false;
-    bool isBegin = true;
-    bool wasDraw = false;
     private void Awake()
     {
         instance = this;
         
     }
-
-
-
-
     private void OnPostRender()
     {
-        if (ColorManager.instance.texture != null)
+        GL.PushMatrix();
+        mat.SetPass(0);
+        GL.LoadPixelMatrix();
+        foreach (Shape shape in list)
         {
-            GL.PushMatrix();
-            mat.SetPass(0);
-            GL.LoadPixelMatrix();
-            DrawSceneBackground();
-            GL.Color(Color.white);
-            foreach (Shape shape in list)
-            {
-                shape.Draw();
-
-            }
-            GL.PopMatrix();
+            shape.Draw();
         }
-        if ((wasColor == true) || (isBegin == true) || (wasDraw == true))
-        {
-            isBegin = false;
-            ColorManager.instance.TakeScreenShot();
-            wasColor = false;
-            wasDraw = false;
-        }
-
+        GL.PopMatrix();
+        Paint.texture.ReadPixels(new Rect(0, 0, Screen.width, Screen.height), 0, 0, false);
+        Paint.texture.Apply();
     }
 
     public void CreateAShape(DrawType type, Vector3 startPoint, Vector3 endPoint)
@@ -110,6 +91,10 @@ public class Demo : MonoBehaviour
                 Divide divide = new Divide(startPoint, endPoint);
                 list.Add(divide);
                 break;
+            case DrawType.Paint:
+                Paint paint = new Paint(startPoint, endPoint, MenuManager.Instance.CurrentColor);
+                list.Add(paint);
+                break;
         }
     }
 
@@ -118,30 +103,4 @@ public class Demo : MonoBehaviour
         if (list.Count == 0) return;
         list[list.Count - 1].Update(startPoint, endPoint);
     }
-
-    public void FinishAShape()
-    {
-        wasDraw = true;
-    }
-
-    public void Coloring(int x,int y, Color color)
-    {
-        ColorManager.instance.Coloring(x, y, color);
-        wasColor = true;
-    }
-    public void DrawSceneBackground()
-    {
-        Texture2D texture = ColorManager.instance.texture;
-        GL.Begin(GL.LINES);        
-        for (int i = 0;i < Screen.width;i++)
-            for (int j = 0;j < Screen.height;j++)
-            {
-                GL.Color(texture.GetPixel(i, j));
-                GL.Vertex3(i, j, 0);
-                GL.Vertex3(i + 1, j, 0);
-            }
-        GL.End();
-    }
-
-   
 }

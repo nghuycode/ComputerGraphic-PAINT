@@ -1,5 +1,4 @@
-﻿
-public static class EnumConst 
+﻿public static class EnumConst 
 {
     public enum DrawType 
     {
@@ -7,6 +6,6 @@ public static class EnumConst
     }
     public enum MenuType 
     {
-        Line, Triangle,  Quadrangle, Oval, Polygon, Other, Math, Color
+        Line, Triangle, Quadrangle, Oval, Polygon, Other, Math, Color
     }
 }
