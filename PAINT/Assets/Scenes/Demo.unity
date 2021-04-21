@@ -152,6 +152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21045ce6195d64ad5a9d2283d8260daf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startTouchPos: {x: 0, y: 0, z: 0}
+  currentTouchPos: {x: 0, y: 0, z: 0}
 --- !u!4 &820152407
 Transform:
   m_ObjectHideFlags: 0
@@ -555,12 +557,12 @@ PrefabInstance:
     - target: {fileID: 6933038349740364935, guid: f11fc9d145216cb45a4a1c1b1278b10f,
         type: 3}
       propertyPath: spacing
-      value: 8
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 6933038349740364935, guid: f11fc9d145216cb45a4a1c1b1278b10f,
         type: 3}
       propertyPath: iconSize
-      value: 32
+      value: 128
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f11fc9d145216cb45a4a1c1b1278b10f, type: 3}

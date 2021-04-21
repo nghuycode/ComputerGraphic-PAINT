@@ -28,7 +28,6 @@ public class Demo : MonoBehaviour
 
     public void CreateAShape(DrawType type, Vector3 startPoint, Vector3 endPoint)
     {
-        Debug.Log(type);
         switch (type)
         {
             case DrawType.Line:
