@@ -2,36 +2,21 @@ using UnityEngine;
 
 public class Square : Shape
 {
-    float length;
-    Vector3 startPoint;
+    Rectangle rectangle;
     public Square(Vector3 startPoint, Vector3 endPoint)
     {
+        rectangle = new Rectangle(startPoint, endPoint);
         Update(startPoint, endPoint);
     }
     override public void Update(Vector3 startPoint, Vector3 endPoint)
-    {
-        if (Mathf.Abs(startPoint.x-endPoint.x)> Mathf.Abs(startPoint.y-endPoint.y))
-            length = endPoint.x - startPoint.x;
+    {   
+        if ((endPoint.x - startPoint.x) * (endPoint.y - startPoint.y) > 0)
+            rectangle.Update(startPoint, new Vector3(endPoint.x, startPoint.y + endPoint.x - startPoint.x, 0));
         else
-            length = endPoint.y - startPoint.y;
-        this.startPoint = startPoint;
+            rectangle.Update(startPoint, new Vector3(startPoint.x - endPoint.y + startPoint.y, endPoint.y, 0));
     }
 
     override public void Draw(){
-        GL.Begin(GL.LINES);
-
-        GL.Vertex3(startPoint.x, startPoint.y, startPoint.z);
-        GL.Vertex3(startPoint.x + length, startPoint.y, startPoint.z);
-
-        GL.Vertex3(startPoint.x, startPoint.y, startPoint.z);
-        GL.Vertex3(startPoint.x, startPoint.y + length, startPoint.z);
-
-        GL.Vertex3(startPoint.x + length, startPoint.y + length, startPoint.z);
-        GL.Vertex3(startPoint.x +length, startPoint.y, startPoint.z);
-
-        GL.Vertex3(startPoint.x + length, startPoint.y + length, startPoint.z);
-        GL.Vertex3(startPoint.x, startPoint.y + length, startPoint.z);
-
-        GL.End();
+        rectangle.Draw();
     }
 }

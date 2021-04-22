@@ -15,6 +15,8 @@ public class Circle : Shape
         {
             Vector3 ci = (new Vector3(Mathf.Cos(theta) * r + center.x, Mathf.Sin(theta) * r + center.y, center.z));
             GL.Vertex3(ci.x, ci.y, ci.z);
+            ci = (new Vector3(Mathf.Cos(theta + 0.01f) * r + center.x, Mathf.Sin(theta + 0.01f) * r + center.y, center.z));
+            GL.Vertex3(ci.x, ci.y, ci.z);
         }
         GL.End();
     }
