@@ -9,22 +9,22 @@ public class ColorManager : MonoBehaviour
     public Texture2D texture = null;
     List<List<int>> mark;
     int value;
-    private void Awake()
-    {
-        instance = this;
-        mark = new List<List<int>>();
-        for (int i = 0;i < Screen.width;i++)
-        {
-            List<int> list = new List<int>();
-            mark.Add(list);
-            for (int j = 0;j < Screen.height;j++)
-            {
-                mark[i].Add(0);
-            }
-        }
+    // private void Awake()
+    // {
+    //     instance = this;
+    //     mark = new List<List<int>>();
+    //     for (int i = 0;i < Screen.width;i++)
+    //     {
+    //         List<int> list = new List<int>();
+    //         mark.Add(list);
+    //         for (int j = 0;j < Screen.height;j++)
+    //         {
+    //             mark[i].Add(0);
+    //         }
+    //     }
 
 
-    }
+    // }
     struct Point
     {
         public int x, y;

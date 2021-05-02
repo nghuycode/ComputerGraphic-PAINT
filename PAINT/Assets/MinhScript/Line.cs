@@ -5,7 +5,6 @@ public class Line : Shape
     Vector3 firstPoint, lastPoint;
     public Line(Vector3 startPoint, Vector3 endPoint)
     {
-        Init(startPoint, endPoint);
         Update(startPoint, endPoint);
     }
     public override void Draw()
@@ -18,6 +17,7 @@ public class Line : Shape
 
     public override void Update(Vector3 startPoint, Vector3 endPoint)
     {
+        Init(startPoint, endPoint);
         firstPoint = startPoint;
         lastPoint = endPoint;
     }

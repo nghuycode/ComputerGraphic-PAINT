@@ -22,33 +22,33 @@ public class Demo : MonoBehaviour
 
     private void OnPostRender()
     {
-        if (ColorManager.instance.texture != null)
-        {
-            GL.PushMatrix();
+        GL.PushMatrix();
             mat.SetPass(0);
             GL.LoadPixelMatrix();
             DrawSceneBackground();
             GL.Color(Color.white);
+            Debug.Log(list.Count);
             foreach (Shape shape in list)
             {
                 shape.Draw();
-
             }
-            GL.PopMatrix();
-        }
-        if ((wasColor == true) || (isBegin == true) || (wasDraw == true))
-        {
-            isBegin = false;
-            ColorManager.instance.TakeScreenShot();
-            wasColor = false;
-            wasDraw = false;
-        }
+        GL.PopMatrix();
+        // if (ColorManager.instance.texture != null)
+        // {
+            
+        // }
+        // if ((wasColor == true) || (isBegin == true) || (wasDraw == true))
+        // {
+        //     isBegin = false;
+        //     //ColorManager.instance.TakeScreenShot();
+        //     wasColor = false;
+        //     wasDraw = false;
+        // }
 
     }
 
     public void CreateAShape(DrawType type, Vector3 startPoint, Vector3 endPoint)
     {
-        Debug.Log(type);
         switch (type)
         {
             case DrawType.Line:
@@ -132,16 +132,16 @@ public class Demo : MonoBehaviour
     }
     public void DrawSceneBackground()
     {
-        Texture2D texture = ColorManager.instance.texture;
-        GL.Begin(GL.LINES);        
-        for (int i = 0;i < Screen.width;i++)
-            for (int j = 0;j < Screen.height;j++)
-            {
-                GL.Color(texture.GetPixel(i, j));
-                GL.Vertex3(i, j, 0);
-                GL.Vertex3(i + 1, j, 0);
-            }
-        GL.End();
+        // Texture2D texture = ColorManager.instance.texture;
+        // GL.Begin(GL.LINES);        
+        // for (int i = 0;i < Screen.width;i++)
+        //     for (int j = 0;j < Screen.height;j++)
+        //     {
+        //         GL.Color(texture.GetPixel(i, j));
+        //         GL.Vertex3(i, j, 0);
+        //         GL.Vertex3(i + 1, j, 0);
+        //     }
+        // GL.End();
     }
 
    

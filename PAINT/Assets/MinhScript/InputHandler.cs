@@ -56,7 +56,6 @@ public class InputHandler : MonoBehaviour
     private void Update()
     {
         MouseCheck();
-        Debug.Log(Demo.list.Count);
         if (Input.GetKey(KeyCode.L)) 
         {
             Demo.list[Demo.list.Count - 1].Rotate(-1);

@@ -22,7 +22,6 @@ public class MenuManager : MonoBehaviour
     public Dictionary<string, PieMenu> MenuDict = new Dictionary<string, PieMenu>();
     public void ReceiveCommand(int id, string cmd) 
     {
-        Debug.Log(cmd);
         if (cmd.Contains("Line")) 
         {
             CurrentMenu = EnumConst.MenuType.Line;
