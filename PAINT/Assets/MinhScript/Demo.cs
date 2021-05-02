@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using static EnumConst;
 public class Demo : MonoBehaviour
 {
-    List<Shape> list = new List<Shape>();
+    public List<Shape> list = new List<Shape>();
     public Material mat;
     public static Demo instance;
     public bool wasColor = false;
