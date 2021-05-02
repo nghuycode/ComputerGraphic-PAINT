@@ -7,6 +7,7 @@ public class Divide : Shape
     Circle circle1, circle2;
     Rectangle rectangle;
     public Divide(Vector3 startPoint, Vector3 endPoint){
+        Init(startPoint, endPoint);
         Update(startPoint, endPoint);
     }
     override public void Update(Vector3 startPoint, Vector3 endPoint){

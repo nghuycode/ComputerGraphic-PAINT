@@ -5,8 +5,8 @@ public class EquilTriangles: Triangle
 {
     public EquilTriangles(Vector3 startPoint, Vector3 endPoint)
     {
+        Init(startPoint, endPoint);
         Update(startPoint, endPoint);
-
     }
 
     public override void Update(Vector3 startPoint, Vector3 endPoint)

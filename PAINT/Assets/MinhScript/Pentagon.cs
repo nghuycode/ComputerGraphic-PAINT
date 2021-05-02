@@ -9,6 +9,7 @@ public class Pentagon : Shape
     Vector3[] points = new Vector3[5];
     public Pentagon(Vector3 startPoint, Vector3 endPoint) 
     {
+        Init(startPoint, endPoint);
         Update(startPoint, endPoint);
     }
     public override void Draw()

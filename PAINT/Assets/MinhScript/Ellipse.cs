@@ -6,6 +6,7 @@ public class Ellipse : Shape{
     Vector3 center;
     Vector3 size;
     public Ellipse(Vector3 startPoint, Vector3 endPoint){
+        Init(startPoint, endPoint);
         Update(startPoint, endPoint);
     }
     public override void Update(Vector3 startPoint, Vector3 endPoint){

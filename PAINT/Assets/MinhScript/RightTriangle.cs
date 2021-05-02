@@ -5,8 +5,8 @@ public class RightTriangle: Triangle
 {
     public RightTriangle(Vector3 startPoint, Vector3 endPoint)
     {
+        Init(startPoint, endPoint);
         Update(startPoint, endPoint);
-
     }
 
     public override void Update(Vector3 startPoint, Vector3 endPoint)

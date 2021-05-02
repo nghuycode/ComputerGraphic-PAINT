@@ -274,6 +274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de466a57f2dbccc469b4b23880b8bac5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Shape: {fileID: 820595599700376203, guid: a84d6d508cd1ff44a811c3e9666dc0a2, type: 3}
   mat: {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   wasColor: 0
 --- !u!1 &1603379521

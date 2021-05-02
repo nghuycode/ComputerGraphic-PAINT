@@ -9,6 +9,7 @@ public class Hexagon : Shape
     Vector3[] points = new Vector3[6];
     public Hexagon(Vector3 startPoint, Vector3 endPoint) 
     {
+        Init(startPoint, endPoint);
         Update(startPoint, endPoint);
     }
     public override void Draw()

@@ -9,9 +9,11 @@ public class Multiply : Shape
     int[] mx = new int[12]{0, 1, 2, 3, 4, 3, 4, 3, 2, 1, 0, 1};
     int[] my = new int[12]{1, 0, 1, 0, 1, 2, 3, 4, 3, 4, 3, 2};
     public Multiply(Vector3 startPoint, Vector3 endPoint){
+        Init(startPoint, endPoint);
         Update(startPoint, endPoint);
     }
     override public void Update(Vector3 startPoint, Vector3 endPoint){
+        Debug.Log(startPoint + "-" + endPoint);
         dx = (endPoint.x - startPoint.x) / 4;
         dy = (endPoint.y - startPoint.y) / 4;
         this.startPoint = startPoint;

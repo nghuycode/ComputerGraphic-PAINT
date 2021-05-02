@@ -15,11 +15,8 @@ public class InputHandler : MonoBehaviour
         Instance = this;
     }
     private void MouseCheck()
-    {
-       
-        currentTouchPos = Input.mousePosition;
-
-        
+    {   
+        currentTouchPos = Input.mousePosition; 
         if (Input.GetMouseButtonDown(0) && _state == TouchState.Drop)
         {
             _state = TouchState.Start;
@@ -28,7 +25,7 @@ public class InputHandler : MonoBehaviour
                 Demo.instance.Coloring((int)Input.mousePosition.x, (int)Input.mousePosition.y, MenuManager.Instance.CurrentColor);
         }
         
-        if (_state == TouchState.Start)
+        if (Input.GetMouseButton(0) && _state == TouchState.Start)
         {   
             if (currentTouchPos != startTouchPos)
             {
@@ -52,12 +49,45 @@ public class InputHandler : MonoBehaviour
 
     void Drag()
     {
-        if(MenuManager.Instance.CurrentDrawType != EnumConst.DrawType.Paint)
+        if (MenuManager.Instance.CurrentDrawType != EnumConst.DrawType.Paint)
         Demo.instance.UpdateAShape(startTouchPos, currentTouchPos);
     }
     #endregion
     private void Update()
     {
         MouseCheck();
+        Debug.Log(Demo.list.Count);
+        if (Input.GetKey(KeyCode.L)) 
+        {
+            Demo.list[Demo.list.Count - 1].Rotate(-1);
+        }
+        if (Input.GetKey(KeyCode.R)) 
+        {
+            Demo.list[Demo.list.Count - 1].Rotate(1);
+        }
+        if (Input.GetKey(KeyCode.UpArrow)) 
+        {
+            Demo.list[Demo.list.Count - 1].Translate(0, 1);
+        }
+        if (Input.GetKey(KeyCode.DownArrow)) 
+        {
+            Demo.list[Demo.list.Count - 1].Translate(0, -1);
+        }
+        if (Input.GetKey(KeyCode.LeftArrow)) 
+        {
+            Demo.list[Demo.list.Count - 1].Translate(-1, 0);
+        }
+        if (Input.GetKey(KeyCode.RightArrow)) 
+        {   
+            Demo.list[Demo.list.Count - 1].Translate(1, 0);
+        }
+        if (Input.GetKey(KeyCode.Plus)) 
+        {
+            Demo.list[Demo.list.Count - 1].Scale(10);
+        }
+        if (Input.GetKey(KeyCode.Minus)) 
+        {
+            Demo.list[Demo.list.Count - 1].Scale(-10);
+        }
     }
 }

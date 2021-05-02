@@ -17,6 +17,6 @@ public class Triangle : Shape
 
     public override void Update(Vector3 startPoint, Vector3 endPoint)
     {
-
+        Init(startPoint, endPoint);
     }
 }

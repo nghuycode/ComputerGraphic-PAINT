@@ -7,6 +7,7 @@ public class Arrow : Shape
     Vector3[] points = new Vector3[4];
     public Arrow(Vector3 startPoint, Vector3 endPoint) 
     {
+        Init(startPoint, endPoint);
         Update(startPoint, endPoint);
     }
     public override void Draw()

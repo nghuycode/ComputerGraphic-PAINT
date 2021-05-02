@@ -9,6 +9,7 @@ public class Plus : Shape{
     int[] mx = new int[12]{0, 1, 1, 2, 2, 3, 3, 2, 2, 1, 1, 0};
     int[] my = new int[12]{-1, -1, 0, 0, -1, -1, -2, -2, -3, -3, -2, -2};
     public Plus(Vector3 startPoint, Vector3 endPoint){
+        Init(startPoint, endPoint);
         Update(startPoint, endPoint);
     }
     public override void Update(Vector3 startPoint, Vector3 endPoint)

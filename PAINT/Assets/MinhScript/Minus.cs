@@ -6,6 +6,7 @@ public class Minus : Shape
 {
     Vector3 startPoint, endPoint;
     public Minus(Vector3 startPoint, Vector3 endPoint){
+        Init(startPoint, endPoint);
         Update(startPoint, endPoint);
     }
     override public void Update(Vector3 startPoint, Vector3 endPoint)
